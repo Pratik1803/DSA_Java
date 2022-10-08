@@ -10,7 +10,7 @@ public class BinarySearchForSortedMatrices
 		    {9,10,11,12},
 		    {13,14,15,16}
 		};
-		int target = 16;
+		int target = 11;
 		System.out.println(Arrays.toString(search(arr, target)));
 	};
 	
@@ -37,9 +37,9 @@ public class BinarySearchForSortedMatrices
 	   int colMid = cols/2;
 	   if(arr[rstart][colMid] > target && arr[rstart][0] < target){
 	       return binarySearch(arr, rstart, 0, colMid - 1, target);
-	   }else if(arr[rstart][colMid] < target && arr[rstart][cols] > target) {
+	   }else if(arr[rstart][colMid] < target) {
 	       return binarySearch(arr, rstart, colMid + 1, arr[0].length - 1, target);
-	   }else if(arr[rend][colMid] > target && arr[rend][0] < target){
+	   }else if(arr[rend][colMid] > target ){
 	       return binarySearch(arr, rend, 0, colMid - 1, target);
 	   }else if(arr[rend][colMid] < target && arr[rend][cols] > target){
 	       return binarySearch(arr, rend, colMid + 1, arr[0].length - 1, target);
